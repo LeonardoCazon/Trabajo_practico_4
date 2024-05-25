@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="UTF-8">
+<title>Trabajo Practico 4</title>
+<link rel="stylesheet" data-th-href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--Importante: agregar a styles.css cuando sea creado -->
+<style>
+        .carousel-indicators button {
+            background-color: black;
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: black;
+        }
+        h1{
+        text-align: center;
+        color: white;
+        text-overflow: ellipsis;
+        font-family:fantasy;
+        
+        padding:20px;
+        margin:30px;
+        background-color: black;
+        }
+		
+		h3{
+        text-align: center;
+        color: white;
+        text-overflow: ellipsis;
+        font-family:fantasy;
+        
+        padding:10px;
+        margin:20px;
+        background-color: black;
+        }
+		
+		footer{
+		color: white;
+		margin:20px;
+		padding:20px;
+		background-color: black;
+		text-align: center;
+		}
+		
+
+</style>
+
+
+</head>
+
+
+<body>
+	
+	
+	<header>
+		<h1>Facultad De Ingenieria<br>Universidad Nacional De Jujuy</h1>
+		
+		<div id="carouselExampleIndicators" class="carousel slide" style="text-align: center;">
+				  <div class="carousel-indicators">
+				    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+				    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+				    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				  </div>
+				  <div class="carousel-inner" >
+				    <div class="carousel-item active">
+				      <img src="img/fi-logo.png" class="img-fluid" alt="fi-Logo">
+				    </div>
+				    <div class="carousel-item">
+				      <img src="img/logo.jpg" class="img-fluid" alt="unju-logo">
+				    </div>
+				    <div class="carousel-item">
+				      <img src="img/ingreso2024.png" class="img-fluid" alt="ingreso2024">
+				    </div>
+				  </div>
+				  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				    <span class="visually-hidden">Previous</span>
+				  </button>
+				  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="visually-hidden">Next</span>
+				  </button>
+		</div>
+		
+	</header>
+	
+	
+	<nav id="navbarNav">
+		<br>
+		<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+			  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+			  
+					  <div class="container-fluid">
+					  
+					    <a class="navbar-brand" href="#navbarNav">Barra de Navegacion</a>
+					    
+					    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					      <span class="navbar-toggler-icon"></span>
+					    </button>
+					    
+					    <div class="collapse navbar-collapse" >
+					    
+					      <ul class="navbar-nav">
+					      
+					        <li class="nav-item">
+					          <a class="nav-link active" aria-current="page" href="#inicio">Inicio</a>
+					        </li>
+					        <li class="nav-item">
+					          <a class="nav-link" href="#acercaDe">Acerca de</a>
+					        </li>
+					        <li class="nav-item">
+					          <a class="nav-link" href="#carreras">Carreras</a>
+					        </li>
+					        
+					        <li class="nav-item">
+					          <a class="nav-link" href="#noticias">Noticias</a>
+					        </li>
+					        
+					        <li class="nav-item">
+					          <a class="nav-link" href="#contactos">Contactos</a>
+					        </li>
+					        
+					      </ul>
+					    </div>
+					  </div>
+			 </nav>
+		</nav>
+		<br>
+		<br>
+	</nav>
+	
+	<div class="row">
+	
+		<main class="col-md-9">
+			
+			
+			<h3>Facultad de Ingeniería de la Universidad Nacional de Jujuy</h3>
+			<div class="accordion" id="accordionPanelsStayOpenExample">
+			
+				  <div id="inicio" class="accordion-item">
+				  
+				    <h2 class="accordion-header">
+				      <button  class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+				        Inicio
+				      </button>
+				    </h2>
+				    
+				    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+				      <div class="accordion-body">
+				      	<p>La Facultad de Ingeniería de la Universidad Nacional de Jujuy (<a href="https://unju.edu.ar/" target="_blank">UNJu</a>) fue fundada el 24 de mayo de 1972, marcando el comienzo de una institución comprometida con la formación académica y profesional en el ámbito de la ingeniería. Esta fecha es significativa porque representa el inicio de una larga tradición de educación y desarrollo en la región, especialmente en áreas tecnológicas y científicas cruciales para el progreso local y nacional​ (<a href="https://es.wikipedia.org/wiki/Universidad_Nacional_de_Jujuy" target="_blank">Wikipedia, la enciclopedia libre</a>)​​ (<a href="https://unjuradio.com/2022/05/04/se-presento-el-libro-construyendo-la-historia-de-la-universidad-nacional-de-jujuy/" target="_blank">UNJu Radio</a>)​.</p>
+				      </div>
+				    </div>
+				  </div>
+				  
+				  <div id="acercaDe"   class="accordion-item">
+				    <h2 class="accordion-header">
+				      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+				        Acerca De
+				      </button>
+				    </h2>
+				    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show">
+				      <div class="accordion-body">
+				        <p>La Facultad de Ingeniería de la UNJu está ubicada en Av. Ítalo Palanca 10, San Salvador de Jujuy. Su misión es proporcionar una educación de alta calidad en ingeniería, fomentar la investigación y el desarrollo tecnológico, y contribuir activamente al bienestar de la comunidad. La facultad se destaca por su compromiso con la excelencia académica y su capacidad para adaptarse a las necesidades cambiantes del mercado laboral y de la sociedad.</p>
+				        <p>La facultad también celebra regularmente eventos académicos, seminarios y conferencias, promoviendo la interacción entre estudiantes, docentes y profesionales de la industria. Estas actividades fomentan un ambiente de aprendizaje dinámico y colaborativo, que es esencial para el crecimiento profesional y personal de sus alumnos y egresados​​.</p>
+				        
+				      </div>
+				    </div>
+				  </div>
+				  
+				  <div id="carreras" class="accordion-item">
+				    <h2 class="accordion-header">
+				      <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
+				        Carreras
+				      </button>
+				    </h2>
+				    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show">
+				      <div class="accordion-body">
+				      		<p>La Facultad de Ingeniería de la Universidad Nacional de Jujuy (UNJu) ofrece diversas carreras tanto de grado como tecnicaturas universitarias en el campo de la ingeniería y las ciencias aplicadas. Las principales carreras de grado incluyen:</p>  
+					        <p>Carreras</p>
+					        <ul>
+					            <li>Ingeniería Química</li>
+					            <li>Ingeniería de Minas</li>
+					            <li>Ingeniería Industrial</li>
+					            <li>Ingeniería Informática</li>
+					            <li>Licenciatura en Sistemas</li>
+					            <li>Licenciatura en Tecnología de los Alimentos</li>
+					            <li>Licenciatura en Ciencias Geológicas</li>
+					        </ul>
+					        <p>Tecnicaturas</p>
+					        <ul>
+					            <li>Analista Programador Universitario</li>
+					            <li>Tecnicatura Universitaria en Ciencias de la Tierra</li>
+					            <li>Tecnicatura Universitaria en Procesamiento de Minerales</li>
+					            <li>Tecnicatura Universitaria en Perforaciones</li>
+					            <li>Tecnicatura Universitaria en Explotación de Minas</li>
+					        </ul>
+				        	
+				      </div>
+				    </div>
+				  </div>
+				  
+				  <div id="noticias" class="accordion-item">
+				    <h2 class="accordion-header">
+				      <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true" aria-controls="panelsStayOpen-collapseFour">
+				        Noticias
+				      </button>
+				    </h2>
+				    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse show">
+				      <div class="accordion-body">
+				        
+				        <p>La Facultad de Ingeniería de la UNJu se mantiene activa con diversas noticias y eventos relevantes para la comunidad académica y profesional. Algunos de los aspectos destacados incluyen:</p>
+				        <ul>
+				            <li>Aniversarios y Celebraciones: La facultad celebra sus aniversarios con actividades académicas y sociales, destacando su historia y evolución.</li>
+				            <li>Investigaciones y Proyectos: Colaboraciones con el Instituto de Biología de la Altura (INBIAL) y el Instituto de Estudios Celulares, Genéticos y Moleculares (ICeGeM).</li>
+				            <li>Conferencias y Seminarios: Organización de seminarios y conferencias para el intercambio de conocimientos entre estudiantes, docentes y profesionales.</li>
+				            <li>Colaboraciones y Convenios: Alianzas estratégicas con instituciones educativas y empresas para promover el desarrollo tecnológico y científico.</li>
+				        </ul>
+				        
+				        <p>Mas noticias en la pagina: <a href="https://www.fi.unju.edu.ar/noticias/historial.html" target="_blank">www.fi.unju.edu.ar</a>.</p>
+				        
+				      </div>
+				    </div>
+				  </div>
+				  
+			</div>
+			
+		</main>
+	
+		<aside class="col-md-3">
+			
+			<ul class="list-group" >
+			  <li class="list-group-item">Enlaces A Paginas De la Facultad</li>
+			  <li class="list-group-item">
+			    <a href="https://www.fi.unju.edu.ar/servicios/biblioteca.html" target="_blank">
+			      <img class="img-fluid" alt="biblioteca Facultad De Ingenieria" src="img/biblFI.jpg">
+			    </a>
+			  </li>
+			  <li class="list-group-item">
+			    <a href="https://www.fi.unju.edu.ar/secretarias/sec-academica/calendario-academico.html" target="_blank">Calendario Academico</a>
+			  </li>
+			  <li class="list-group-item">
+			    <a href="https://www.unju.edu.ar/comedor.html" target="_blank">Comedor Universitario</a>
+			  </li>
+			  <li class="list-group-item">
+			    <a href="https://www.fi.unju.edu.ar/servicios/logos.html" target="_blank">Logros De La Facultad De Ingenieria</a>
+			  </li>
+			  
+			</ul>
+		</aside>
+		
+	</div>
+
+	
+	
+	<footer>
+			<ul>
+			    <li>Dirección:<a href="https://search.brave.com/search?q=google+maps+facultad+de+ingenieria+jujuy&spellcheck=0&source=alteredQuery&map_src=infobox&loc_id=0&tgt=map" target="_blank"> J. M. Gorriti Norte 199, Santiago del Estero, AR</a></li>
+			    <li>Teléfono: <a href="https://fi.unju.edu.ar/servicios/telefonos.html" target="_blank">Teléfonos De FIUNJu habilitados desde el 1 de marzo</a></li>
+			    <li>Correo electrónico: info@fi.unju.edu.ar</li>
+			</ul>
+		
+<div id="contactos" class="container">
+    <div class="row">
+        <div class="col-md-4">
+				<div class="card" style="width: 18rem;">
+					  <img src="img/redesFI.png" class="card-img-top" alt="FI-Facebook">
+					  <div class="card-body">
+					    <h5 class="card-title">Facebook Facultad de Ingenieria</h5>
+					    <p class="card-text">Página · Universidad
+							<br>Ítalo Palanca 10, San Salvador de Jujuy, Argentina
+							<br>info@fi.unju.edu.ar
+							<br>fi.unju.edu.ar</p>
+					    <a href="https://www.facebook.com/fiunju/" class="btn btn-primary">Facebook</a>
+					 </div>
+				</div>
+        </div>
+        <div class="col-md-4">
+			<div class="card" style="width: 18rem;">
+				  <img src="img/redesFI.png" class="card-img-top" alt="FI-Instagram">
+				  <div class="card-body">
+				    <h5 class="card-title">Instragram Facultad de Ingenieria</h5>
+				    <p class="card-text">Facultad de Ingeniería (UNJu)
+						<br>🏛Cuenta oficial de la Facultad de Ingeniería-UNJu
+						<br>🤵Decano: Ing. Luis A. Vargas
+						<br>👩‍💼Vicedecana: Ing. Maria E. Alfaro
+						<br>📌Ítalo Palanca N.10- S.S. de Jujuy</p>
+				    <a href="https://www.instagram.com/fiunju/" class="btn btn-primary">Instragram</a>
+				  </div>
+			</div>
+        </div>
+        <div class="col-md-4">
+			<div class="card" style="width: 18rem;">
+				  <img src="img/redesFI.png" class="card-img-top" alt="FI-Youtube">
+				  <div class="card-body">
+				    <h5 class="card-title">Youtube Facultad de Ingenieria</h5>
+				    <p class="card-text">Canal oficial de la Facultad de Ingeniería de la Universidad Nacional de Jujuy
+						<br>3.21 K suscriptores
+						<br>613 videos
+						<br>315,625 vistas
+						<br>Se unió el 10 jun 2015</p>
+						
+				    <a href="https://www.youtube.com/channel/UCgS9XJlKKSYI1oJ4lIOo77A" class="btn btn-primary">Youtube</a>
+				  </div>
+			</div>
+        </div>
+    </div>
+</div>
+		
+			<br>
+			<p>Derechos de autor &copy; 2024. Todos los derechos reservados.</p>
+
+		
+	</footer>
+
+	<script data-th-src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+</body>
+
+
+</html>
