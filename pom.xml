@@ -37,8 +37,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
-	
+		
 	<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
 	<dependency>
 	    <groupId>org.webjars</groupId>
@@ -52,6 +51,11 @@
 	    <artifactId>webjars-locator</artifactId>
 	    <version>0.52</version>
 	</dependency>
+		
+		
+	</dependencies>
+	
+
 
 
 	<build>
