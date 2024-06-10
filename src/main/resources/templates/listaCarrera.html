@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lista De Carreras</title>
+<link rel="stylesheet" data-th-href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+<link rel="stylesheet" href="/css/styles.css"></link>
+</head>
+<body>
+	
+	<header data-th-replace="~{layouts/header :: header}"></header>
+	
+	
+	<div class="container">
+		<h1>Listado De Carreras</h1>
+		<table class="table">
+				<thead class="table-light">
+			    <tr>
+			      <th scope="col">Nombre</th>
+			      <th scope="col">Codigo</th>
+			      <th scope="col">Años</th>
+			      <th scope="col">Estado</th>
+			      <th scope="col">Acciones</th>
+			    </tr>
+			  </thead>
+			  
+			  <tbody class="table-group-divider">
+			    <tr data-th-each="carrera : ${listadoDeCarreras}">
+			      <td data-th-text="${carrera.nombre}"></td>
+			      <td data-th-text="${carrera.codigo}"></td>
+			      <td data-th-text="${carrera.cantAnios}"></td>
+			      <td data-th-text="${carrera.estado}"></td>
+			      <td>
+			      	<a data-th-href="@{'/borrarCarrera/'+${carrera.codigo}}" class="btn btn-danger">Borrar</a>
+			      	<a data-th-href="@{'/modificarCarrera/'+${carrera.codigo}}" class="btn btn-warning">Modificar</a>
+			      </td>
+			    </tr>
+			  </tbody>
+		</table>
+	</div>
+	
+	
+	<footer data-th-replace="~{layouts/footer :: footer}"></footer>
+	
+	<script data-th-src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

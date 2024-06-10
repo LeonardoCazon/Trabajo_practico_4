@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formulario De Carreras</title>
+<link rel="stylesheet" data-th-href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+<link rel="stylesheet" href="/css/styles.css"></link>
+
+</head>
+<body>
+	
+	<header data-th-replace="~{layouts/header :: header}"></header>
+	
+	
+	<div class="container">
+		<h1>Formulario De Carrera</h1>
+		<form data-th-object="${nuevaCarrera}"
+		data-th-action="${band}?@{/modificarCarrera}:@{/guardarCarrera}"
+		method="post">
+		
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="nombre" data-th-field="*{nombre}"
+					placeholder="Ingrese El Nombre De La Carrera" required> 
+				<label for="nombre">Nombre de la Carrera</label>
+			</div>
+			
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" placeholder="Ingrese El Codigo De La Carrera" data-th-field="*{codigo}"
+					id="codigo" required data-th-readonly=${band} >
+				<label for="codigo">Codigo de la Carrera</label>
+			</div>
+
+			<div class="form-floating mb-3">
+				<input type="number" class="form-control" placeholder="Ingrese La Cantidad De Años De La Carrera" data-th-field="*{cantAnios}"
+					id="cantAnios"  required >
+				<label for="cantAnios">Cantidad de Años de la Carrera</label>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Guardar Carrera</button>
+		</form>
+	</div>
+	
+	
+	<footer data-th-replace="~{layouts/footer :: footer}"></footer>
+	
+	<script data-th-src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

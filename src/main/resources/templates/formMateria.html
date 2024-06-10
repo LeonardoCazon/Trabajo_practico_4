@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formulario Materia</title>
+<link rel="stylesheet"
+	data-th-href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+<link rel="stylesheet" href="/css/styles.css"></link>
+
+</head>
+
+
+<body>
+
+	<header data-th-replace="~{layouts/header :: header}"></header>
+
+	<div class="container">
+		<h1>Formulario De Materia</h1>
+		<form data-th-object="${nuevaMateria}"
+			data-th-action="${band}?@{/modificarMateria}:@{/guardarMateria}"
+			method="post">
+
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="nombre"
+					data-th-field="*{nombre}"
+					placeholder="Ingrese El Nombre De La Materia" required> <label
+					for="nombre">Nombre de la Materia</label>
+			</div>
+
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control"
+					placeholder="Ingrese El Codigo De La Materia"
+					data-th-field="*{codigo}" id="codigo" required
+					data-th-readonly=${band}> <label for="codigo">Codigo
+					de la Materia</label>
+			</div>
+
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="curso"
+					data-th-field="*{curso}"
+					placeholder="Ingrese El Curso De La Materia" required> <label
+					for="curso">Curso de la Materia</label>
+			</div>
+
+			<div class="form-floating mb-3">
+				<input type="number" class="form-control"
+					placeholder="Ingrese La Cantidad De Horas De La Materia"
+					data-th-field="*{cantHoras}" id="cantHoras" required> <label
+					for="cantHoras">Cantidad de Horas de la Materia</label>
+			</div>
+
+			<div class="form-floating mb-3">
+				<select class="form-control" id="modalidad"
+					data-th-field="*{modalidad}" required>
+					<option value="">Seleccione la Modalidad</option>
+					<option value="presencial">Presencial</option>
+					<option value="virtual">Virtual</option>
+				</select> <label for="modalidad">Modalidad</label>
+			</div>
+
+			<div class="form-floating mb-3">
+				<select class="form-control" id="docente" data-th-field="*{docente}"
+					required>
+					<option value="">Seleccione el Docente de la Materia</option>
+					<option data-th-each="docente : ${listadoDeDocentes}"
+						data-th-text="${docente.nombre}">
+					</option>
+				</select> 
+				<label for="docente">Docente</label>
+			</div>
+			
+			<div class="form-floating mb-3">
+				<select class="form-control" id="carrera" data-th-field="*{carrera}"
+					required>
+					<option value="">Seleccione la carrera de la Materia</option>
+					<option data-th-each="carrera : ${listadoDeCarreras}"
+						data-th-value="${carrera.codigo}" data-th-text="${carrera.nombre}">
+					</option>
+				</select> 
+				<label for="carrera">Carrera</label>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Guardar Materia</button>
+
+		</form>
+	</div>
+
+
+
+
+
+	<footer data-th-replace="~{layouts/footer :: footer}"></footer>
+
+	<script
+		data-th-src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+</html>

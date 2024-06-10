@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formulario Alumno</title>
+<link rel="stylesheet" data-th-href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+<link rel="stylesheet" href="/css/styles.css"></link>
+</head>
+
+
+<body>
+	
+	<header data-th-replace="~{layouts/header :: header}"></header>
+
+	<div class="container">
+		<h1>Formulario De Alumno</h1>
+		<form data-th-object="${nuevoAlumno}" 
+		data-th-action="${band}?@{/modificarAlumno}:@{/guardarAlumno}"
+		method="post">
+
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="nombre"
+					data-th-field="*{nombre}"
+					placeholder="Ingrese El Nombre Del Alumno" required> <label
+					for="nombre">Nombre del Alumno</label>
+			</div>
+
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="apellido"
+					data-th-field="*{apellido}"
+					placeholder="Ingrese El Apellido Del Alumno" required> <label
+					for="apellido">Apellido del Alumno</label>
+			</div>
+
+			<div class="form-floating mb-3">
+				<input type="number" class="form-control"
+					placeholder="Ingrese El DNI Del Alumno"
+					data-th-field="*{dni}" id="dni" data-th-readonly=${band} required> <label
+					for="dni">DNI del Alumno</label>
+			</div>
+
+			<div class="form-floating mb-3">
+				<input type="email" class="form-control"
+					placeholder="Ingrese el email del alumno"
+					data-th-field="*{email}" id="email" ><label
+					for="email">Email Del Alumno</label>
+			</div>
+			
+			<div class="form-floating mb-3">
+				<input type="number" class="form-control"
+					placeholder="Ingrese El Telefono Del Alumno"
+					data-th-field="*{telefono}" id="telefono"><label
+					for="telefono">telefono del Alumno</label>
+			</div>
+			
+			<div class="form-floating mb-3">
+				<input type="date" class="form-control"
+					placeholder="Ingrese El Fecha de nacimiento Del Alumno"
+					data-th-field="*{fechNac}" id="fechNac" required><label
+					for="fechNac">Fecha de Nacimiento del Alumno</label>
+			</div>
+			
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control"
+					placeholder="Ingrese El Domicilio Del Alumno"
+					data-th-field="*{domicilio}" id="domicilio" required> <label
+					for="domicilio">Domicilio del Alumno</label>
+			</div>
+			
+			<div class="form-floating mb-3">
+				<input type="number" class="form-control"
+					placeholder="Ingrese La Libreta Universitaria Del Alumno"
+					data-th-field="*{lu}" id="lu" required> <label
+					for="lu">Libreta Universitaria del Alumno</label>
+			</div>
+			
+			<button type="submit" class="btn btn-primary">Guardar Alumno</button>
+		</form>
+	</div>
+
+
+	<footer data-th-replace="~{layouts/footer :: footer}"></footer>
+	
+	<script data-th-src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+	
+</body>
+</html>
