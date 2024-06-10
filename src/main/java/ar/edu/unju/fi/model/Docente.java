@@ -1,11 +1,14 @@
 package ar.edu.unju.fi.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Docente {
 	private int legajo;
 	private String nombre;
 	private String apellido;
 	private String email;
-	private int telefono;
+	private String telefono;
 	
 	public Docente() {
 		// TODO Auto-generated constructor stub
@@ -52,11 +55,11 @@ public class Docente {
 		this.email = email;
 	}
 
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 	

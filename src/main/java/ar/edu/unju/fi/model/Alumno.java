@@ -1,5 +1,10 @@
 package ar.edu.unju.fi.model;
 
+import java.util.Date;
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class Alumno {
 	private int DNI;
 	private String nombre;
@@ -13,11 +18,6 @@ public class Alumno {
 	public Alumno() {
 		// TODO Auto-generated constructor stub
 	}
-
-	
-	
-	
-	
 	
 	@Override
 	public String toString() {

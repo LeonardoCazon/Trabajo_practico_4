@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lista Materia</title>
+<link rel="stylesheet" data-th-href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+<link rel="stylesheet" href="/css/styles.css"></link>
+
+</head>
+
+
+<body>
+	
+	<header data-th-replace="~{layouts/header :: header}"></header>
+
+	<div class="container">
+		<h1>Listado De Materias</h1>
+		<table class="table">
+			<thead class="table-light">
+				<tr>
+					<th scope="col">Nombre</th>
+					<th scope="col">Codigo</th>
+					<th scope="col">curso</th>
+					<th scope="col">Cantidad De Horas</th>
+					<th scope="col">Modalidad</th>
+					<th scope="col">Docente</th>
+					<th scope="col">Carrera</th>
+					<th scope="col">Acciones</th>
+				</tr>
+			</thead>
+
+			<tbody class="table-group-divider">
+				<tr data-th-each="materia : ${listadoDeMaterias}">
+					<td data-th-text="${materia.nombre}"></td>
+					<td data-th-text="${materia.codigo}"></td>
+					<td data-th-text="${materia.curso}"></td>
+					<td data-th-text="${materia.cantHoras}"></td>
+					<td data-th-text="${materia.modalidad}"></td>
+					<td data-th-text="${materia.docente}"></td>
+					<td data-th-text="${materia.carrera}"></td>
+					
+					<td><a data-th-href="@{'/borrarMateria/'+${materia.codigo}}" class="btn btn-danger">Borrar</a> <a
+						data-th-href="@{'/modificarMateria/'+${materia.codigo}}" class="btn btn-warning">Modificar</a>
+					</td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+
+
+
+	<footer data-th-replace="~{layouts/footer :: footer}"></footer>
+	
+	<script data-th-src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+	
+</body>
+</html>
