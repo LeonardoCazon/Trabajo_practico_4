@@ -1,19 +1,20 @@
 package ar.edu.unju.fi.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import org.springframework.stereotype.Component;
 
 @Component
 public class Alumno {
-	private int DNI;
+	private int dni;
 	private String nombre;
 	private String apellido;
 	private String email;
 	private int telefono;
-	private Date fechNac;
-	private String Domicilio;
-	private int LU;
+	private LocalDate fechNac;
+	private String domicilio;
+	private int lu;
 	
 	public Alumno() {
 		// TODO Auto-generated constructor stub
@@ -21,21 +22,16 @@ public class Alumno {
 	
 	@Override
 	public String toString() {
-		return "Alumno [DNI=" + DNI + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email
-				+ ", telefono=" + telefono + ", Domicilio=" + Domicilio + ", LU=" + LU + "]";
+		return "Alumno [DNI=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email
+				+ ", telefono=" + telefono + ", Domicilio=" + domicilio + ", LU=" + lu + "]";
 	}
 
-
-
-
-
-
-	public int getDNI() {
-		return DNI;
+	public int getDni() {
+		return dni;
 	}
 
-	public void setDNI(int dNI) {
-		DNI = dNI;
+	public void setDni(int dni) {
+		this.dni = dni;
 	}
 
 	public String getNombre() {
@@ -70,33 +66,29 @@ public class Alumno {
 		this.telefono = telefono;
 	}
 
-	public Date getFechNac() {
+	public LocalDate getFechNac() {
 		return fechNac;
 	}
 
-	public void setFechNac(Date fechNac) {
+	public void setFechNac(LocalDate fechNac) {
 		this.fechNac = fechNac;
 	}
 
 	public String getDomicilio() {
-		return Domicilio;
+		return domicilio;
 	}
 
 	public void setDomicilio(String domicilio) {
-		Domicilio = domicilio;
+		this.domicilio = domicilio;
 	}
 
-	public int getLU() {
-		return LU;
+	public int getLu() {
+		return lu;
 	}
 
-	public void setLU(int lU) {
-		LU = lU;
+	public void setLu(int lu) {
+		this.lu = lu;
 	}
-	
-	
-	
-	
 	
 	
 }

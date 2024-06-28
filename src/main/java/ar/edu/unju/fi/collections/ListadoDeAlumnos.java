@@ -16,7 +16,7 @@ public class ListadoDeAlumnos {
 	//metodos para buscar por DNI
 	public static Alumno buscarAlumnoPorDNI(int busc) {
 		for(Alumno a: alumnos) {
-			if(a.getDNI()==busc) {
+			if(a.getDni()==busc) {
 				return a;
 			}
 		}
@@ -33,7 +33,7 @@ public class ListadoDeAlumnos {
 	    for (int i = 0; i < alumnos.size(); i++) {
 	    	Alumno alumno= alumnos.get(i);
 	    	
-	      if (alumno.getDNI()== alumnoModificado.getDNI()) {
+	      if (alumno.getDni()== alumnoModificado.getDni()) {
 	        alumnos.set(i, alumnoModificado);
 	        break;
 	      }
@@ -42,7 +42,7 @@ public class ListadoDeAlumnos {
 	  
 	//metodo para eliminar
 	public static void eliminarAlumno(int busc){		
-		alumnos.removeIf(a->a.getDNI()==busc);
+		alumnos.removeIf(a->a.getDni()==busc);
 	}
 	
 }

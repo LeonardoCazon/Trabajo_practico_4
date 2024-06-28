@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
@@ -47,8 +48,8 @@
 			<div class="form-floating mb-3">
 				<input type="number" class="form-control"
 					placeholder="Ingrese La Cantidad De Horas De La Materia"
-					data-th-field="*{cantHoras}" id="cantHoras" required> <label
-					for="cantHoras">Cantidad de Horas de la Materia</label>
+					data-th-field="*{cantHoras}" id="cantHoras" required> 
+					<label for="cantHoras">Cantidad de Horas de la Materia</label>
 			</div>
 
 			<div class="form-floating mb-3">
@@ -59,30 +60,23 @@
 					<option value="virtual">Virtual</option>
 				</select> <label for="modalidad">Modalidad</label>
 			</div>
-
+			
 			<div class="form-floating mb-3">
-				<select class="form-control" id="docente" data-th-field="*{docente}"
-					required>
-					<option value="">Seleccione el Docente de la Materia</option>
-					<option data-th-each="docente : ${listadoDeDocentes}"
-						data-th-text="${docente.nombre}">
-					</option>
-				</select> 
-				<label for="docente">Docente</label>
+				<input type="text" class="form-control" id="docente"
+					data-th-field="*{docente}"
+					placeholder="Ingrese El Docente De La Materia" required> <label
+					for="docente">Docente de la Materia</label>
 			</div>
 			
 			<div class="form-floating mb-3">
-				<select class="form-control" id="carrera" data-th-field="*{carrera}"
-					required>
-					<option value="">Seleccione la carrera de la Materia</option>
-					<option data-th-each="carrera : ${listadoDeCarreras}"
-						data-th-value="${carrera.codigo}" data-th-text="${carrera.nombre}">
-					</option>
-				</select> 
-				<label for="carrera">Carrera</label>
-			</div>
+				<input type="text" class="form-control" id="carrera"
+					data-th-field="*{carrera}"
+					placeholder="Ingrese La Carrera De La Materia" required> <label
+					for="nombre">Carrera de la Materia</label>
+			</div> 
 
-			<button type="submit" class="btn btn-primary">Guardar Materia</button>
+
+	<button type="submit" class="btn btn-primary">Guardar Materia</button>
 
 		</form>
 	</div>
