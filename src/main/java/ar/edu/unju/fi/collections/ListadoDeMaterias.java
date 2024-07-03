@@ -26,11 +26,24 @@ public class ListadoDeMaterias {
 	
 	//metodo para agregar
 	public static void agregarMateria(Materia m) {
+		m.setEstado(true);
+		
+		  int legajoDocente = m.getDocente().getLegajo(); 
+		  String codigoCarrera = m.getCarrera().getCodigo();
+		  
+		  m.setDocente(ListadoDeDocentes.buscarDocentePorlegajo(legajoDocente));
+		  m.setCarrera(ListadoDeCarreras.buscarCarreraPorCodigo(codigoCarrera));
+		 
 		materias.add(m);
 	}
 	
 	//metodo para modificar
 	  public static void modificarMateria(Materia materiaModificada) {
+		  int legajoDocente = materiaModificada.getDocente().getLegajo(); 
+		  String codigoCarrera = materiaModificada.getCarrera().getCodigo();
+		  
+		  materiaModificada.setDocente(ListadoDeDocentes.buscarDocentePorlegajo(legajoDocente));
+		  materiaModificada.setCarrera(ListadoDeCarreras.buscarCarreraPorCodigo(codigoCarrera));
 	    for (int i = 0; i < materias.size(); i++) {
 	    	Materia materia = materias.get(i);
 	      if (materia.getCodigo().equals(materiaModificada.getCodigo())) {
