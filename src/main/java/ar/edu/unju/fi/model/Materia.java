@@ -9,18 +9,43 @@ public class Materia {
 	private String curso;
 	private int cantHoras;
 	private String modalidad;
-	private String docente;
-	private String carrera;
+	private Docente docente;
+	private Carrera carrera;
+	private Boolean estado;
 	
 	public Materia() {
 		// TODO Auto-generated constructor stub
 	}
 	
 
+	public Boolean getEstado() {
+		return estado;
+	}
+
+
+	public void setEstado(Boolean estado) {
+		this.estado = estado;
+	}
+
+
+	public Materia(String codigo, String nombre, String curso, int cantHoras, String modalidad, Docente docente,
+			Carrera carrera, Boolean estado) {
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.curso = curso;
+		this.cantHoras = cantHoras;
+		this.modalidad = modalidad;
+		this.docente = docente;
+		this.carrera = carrera;
+		this.estado = estado;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Materia [codigo=" + codigo + ", nombre=" + nombre + ", curso=" + curso + ", cantHoras=" + cantHoras
-				+ ", modalidad=" + modalidad + ", docente=" + docente + ", carrera=" + carrera + "]";
+				+ ", modalidad=" + modalidad + ", docente=" + docente + ", carrera=" + carrera + ", estado=" + estado
+				+ "]";
 	}
 
 
@@ -65,19 +90,19 @@ public class Materia {
 		this.modalidad = modalidad;
 	}
 
-	public String getDocente() {
+	public Docente getDocente() {
 		return docente;
 	}
 
-	public void setDocente(String docente) {
+	public void setDocente(Docente docente) {
 		this.docente = docente;
 	}
 
-	public String getCarrera() {
+	public Carrera getCarrera() {
 		return carrera;
 	}
 
-	public void setCarrera(String carrera) {
+	public void setCarrera(Carrera carrera) {
 		this.carrera = carrera;
 	}
 	

@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
+import ar.edu.unju.fi.collections.ListadoDeCarreras;
+import ar.edu.unju.fi.collections.ListadoDeDocentes;
 import ar.edu.unju.fi.collections.ListadoDeMaterias;
 import ar.edu.unju.fi.model.Materia;
 
@@ -25,8 +27,11 @@ public class MateriaController {
 		//vista del formulario
 		ModelAndView MV = new ModelAndView("formMateria");
 		
+		
 		//agrega el objeto
 		MV.addObject("nuevaMateria", nuevaMateria);
+		MV.addObject("listadoDeDocentes", ListadoDeDocentes.listarDocentes());
+		MV.addObject("listadoDeCarreras", ListadoDeCarreras.listarCarreras());
 		MV.addObject("band", false);
 		return MV;
 	}
@@ -40,17 +45,23 @@ public class MateriaController {
 		return MV;
 	}
 	
-	@PostMapping("/guardarMateria")
-	public ModelAndView saveMateria(@ModelAttribute("nuevaMateria") Materia MateriaParaGuardar) {
-		//guardar
-		ListadoDeMaterias.agregarMateria(MateriaParaGuardar);
-		
-		//mostrar el listado
-		ModelAndView MV = new ModelAndView("listaMateria");
-		MV.addObject("listadoDeMaterias",ListadoDeMaterias.listarMaterias());
-		
-		return MV;
-	}
+	
+
+  @PostMapping("/guardarMateria") public ModelAndView
+  saveMateria(@ModelAttribute("nuevaMateria") Materia MateriaParaGuardar) {
+	  //guardar 
+	  ListadoDeMaterias.agregarMateria(MateriaParaGuardar);
+  
+	  //mostrar el listado 
+	  ModelAndView MV = new ModelAndView("listaMateria");
+	  MV.addObject("listadoDeMaterias",ListadoDeMaterias.listarMaterias());
+  
+	  return MV;
+  
+  
+  
+  }
+ 
 	
 	@GetMapping("/borrarMateria/{codigo}")
 	public static ModelAndView deleteMateria(@PathVariable(name="codigo")String codigo) {
@@ -72,6 +83,8 @@ public class MateriaController {
 		//mostrar el nuevo formulario
 		ModelAndView modelView = new ModelAndView("formMateria");
 		modelView.addObject("nuevaMateria", materiaParaModificar);	
+		modelView.addObject("listadoDeDocentes", ListadoDeDocentes.listarDocentes());
+		modelView.addObject("listadoDeCarreras", ListadoDeCarreras.listarCarreras());
 		modelView.addObject("band", true);
 		return modelView;		
 	}

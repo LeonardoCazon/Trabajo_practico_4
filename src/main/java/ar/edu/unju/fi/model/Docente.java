@@ -15,6 +15,17 @@ public class Docente {
 	}
 
 	
+	
+	public Docente(int legajo, String nombre, String apellido, String email, String telefono) {
+		this.legajo = legajo;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.email = email;
+		this.telefono = telefono;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Docente [legajo=" + legajo + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email
